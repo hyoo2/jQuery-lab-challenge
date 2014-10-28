@@ -7,7 +7,7 @@
 // optional features to work on:
 // -- If seconds > 60, timer display should switch to minute:second.
 // -- Include a warning when time is up (audio or visual).
-// -- Display time in miliseconds.
+// -- Display time in milliseconds.
 
 
 // First, take a look at the index.html file to see the items you
@@ -15,6 +15,13 @@
 
 // This function is the equivalent of document ready
 $(function() {
+    $('#countdownButton').click(function() {
+        var seconds = #time.text;
+        window.setInterval(function() {
+            //var elapsedSeconds = Math.floor((Date.now() - seconds) / 1000);
+            $('#displayedTimer').text(elapsedSeconds + 's');
+        });
+    });
 	/* Hints:
 	 		-- Start by registering the click event for the button.
 	 		-- You will need to keep track of the number of second somewhere.
@@ -22,7 +29,7 @@ $(function() {
 	 		-- Input values are strings, remember to parse it!
 			-- Regex for checking digit input is '^\\d+$'
 			-- Look up how setInterval() works, you will need it.
-	*/		
+	*/
 });
 
 function countDown() {
